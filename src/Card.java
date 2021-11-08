@@ -1,13 +1,13 @@
-public final class Card {
+public  class Card {
 
     //card values
-    private final String cardValue;
+    private final String value;
     private final String suitName;
     private final int number;
 
 
-    public Card(String cardValue, String suitName, int number) {
-        this.cardValue = cardValue;
+    public Card(String value, String suitName, int number) {
+        this.value = value;
         this.suitName = suitName;
         this.number = number;
     }
@@ -18,8 +18,8 @@ public final class Card {
         return suitName;
     }
 
-    public String getCardValue() {
-        return cardValue;
+    public String getValue() {
+        return value;
     }
 
     public int getNumber() {
@@ -27,7 +27,7 @@ public final class Card {
     }
 
     public String describe(){
-        return getCardValue() + " of " + getSuitName();
+        return getValue() + " of " + getSuitName();
     }
 
     /**
@@ -39,7 +39,7 @@ public final class Card {
     @Override
     public String toString() {
         return "Card{" +
-                "cardValue ='" + cardValue + '\'' +
+                "value ='" + value + '\'' +
                 ", suitName='" + suitName + '\'' +
                 ", number=" + number +
                 '}';
