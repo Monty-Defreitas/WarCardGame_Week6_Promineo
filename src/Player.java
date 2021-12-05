@@ -1,31 +1,36 @@
 import java.util.ArrayList;
 import java.util.List;
+
 public final class Player {
-        private static final List<Card> hand = new ArrayList<Card>();
-        int score;
-        int loses;
-        String name;
+    private static final List<Card> hand = new ArrayList<Card>();
+    int score;
+    int loses;
+    String name;
 
-        public Player(String name){
-            this.name = name;
-            score = 0; // increments the players score
-        }
+    public Player(String name) {
+        this.name = name;
+        score = 0; // increments the players score
+    }
 
-        public void describe(){
-            for(Card h: hand){
-                System.out.println(h);
-            }
+    public void describe() {
+        for (Card h : hand) {
+            System.out.println(h);
         }
-        public void draw(Deck deck) {
-            hand.add(0, deck.draw());
-        }
-       public String getCardSuit(){
-            return hand.get(0).getSuitName();
-       }
-        public String getCardValue(){
-            return hand.get(0).getValue();
-        }
-        public Card flip(){
-            return hand.remove(0);
-        }
+    }
+
+    public void draw(Deck deck) {
+        hand.add(0, deck.draw());
+    }
+
+    public String getCardSuit() {
+        return hand.get(0).getSuitName();
+    }
+
+    public String getCardValue() {
+        return hand.get(0).getValue();
+    }
+
+    public Card flip() {
+        return hand.remove(0);
+    }
 }

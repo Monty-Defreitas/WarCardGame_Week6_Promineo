@@ -1,4 +1,4 @@
-public  class Card {
+public class Card {
 
     //card values
     private final String value;
@@ -23,14 +23,15 @@ public  class Card {
         return number;
     }
 
-    public String describe(){
+    public String describe() {
         return getValue() + " of " + getSuitName();
     }
 
     /**
      * For debugging purposes, to check if deck is properly populated.
+     *
      * @return carvalue, suitname and number.
-     * */
+     */
     @Override
     public String toString() {
         return "Card{" +
