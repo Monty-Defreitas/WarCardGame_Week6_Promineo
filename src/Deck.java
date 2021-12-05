@@ -15,6 +15,7 @@ public class Deck {
     private static final List<Card> cards = new ArrayList<Card>();
 
     public Deck(){
+
         for (int i = 0; i < cardValue.size(); i++) {
             String value = cardValue.get(i);
             int number = i + 2;

@@ -13,7 +13,7 @@ public final class Player {
 
         public void describe(){
             for(Card h: hand){
-                System.out.println(name + " " + h.describe());
+                System.out.println(h);
             }
         }
         public void draw(Deck deck) {

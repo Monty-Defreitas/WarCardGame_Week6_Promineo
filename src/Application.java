@@ -29,6 +29,7 @@ public class Application {
 
         for (int i = 0; i < 26; i++){
 
+
             System.out.print(one.name + " Drew: " + one.getCardValue() + " of " + one.getCardSuit());
             int oneNum = one.flip().getNumber();
             System.out.print("<--->");
@@ -65,6 +66,7 @@ public class Application {
         else {
             System.out.println(one.name + " ties with " + two.name);
         }
+
 
     }
 }
