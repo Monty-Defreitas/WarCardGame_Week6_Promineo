@@ -22,7 +22,6 @@ public final class Player {
        public String getCardSuit(){
             return hand.get(0).getSuitName();
        }
-
         public String getCardValue(){
             return hand.get(0).getValue();
         }

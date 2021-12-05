@@ -7,7 +7,6 @@ public class Application {
         Player draws = new Player("Draws");
         Player one = new Player("Monty");
         Player two = new Player("Eli");
-
         String p1P2 = "\t" + "\t" + "[" + one.name + "] Wins";
 
         StringBuilder builder2 = new StringBuilder();
@@ -26,25 +25,19 @@ public class Application {
             one.draw(deck);
         }
 
-
         for (int i = 0; i < 26; i++){
-
-
             System.out.print(one.name + " Drew: " + one.getCardValue() + " of " + one.getCardSuit());
             int oneNum = one.flip().getNumber();
             System.out.print("<--->");
             System.out.print(two.name + " Drew: " + one.getCardValue() + " of " + one.getCardSuit() + "\n");
             int twoNum = two.flip().getNumber();
 
-
             if (oneNum > twoNum){
                 one.score ++;
-
                 System.out.println("[" + one.name + "] Wins");
 
             }  else if (twoNum > oneNum) {
                 two.score ++;
-
                 System.out.println(builder2 + "[" + two.name + "] Wins");
 
             } else {
