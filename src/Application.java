@@ -21,15 +21,17 @@ public class Application {
         System.out.println("Shuffling the Deck...");
         deck.shuffle();
 
-        for (int i = 0; i < 52; i++) {
+        for (int i = 0; i < 26; i++) {
             one.draw(deck);
+            two.draw(deck);
+
         }
 
         for (int i = 0; i < 26; i++) {
             System.out.print(one.name + " Drew: " + one.getCardValue() + " of " + one.getCardSuit());
             int oneNum = one.flip().getNumber();
             System.out.print("<--->");
-            System.out.print(two.name + " Drew: " + one.getCardValue() + " of " + one.getCardSuit() + "\n");
+            System.out.print(two.name + " Drew: " + two.getCardValue() + " of " + two.getCardSuit() + "\n");
             int twoNum = two.flip().getNumber();
 
             if (oneNum > twoNum) {
