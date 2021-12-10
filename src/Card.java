@@ -35,9 +35,8 @@ public class Card {
     @Override
     public String toString() {
         return "Card{" +
-                "value ='" + value + '\'' +
-                ", suitName='" + suitName + '\'' +
-                ", number=" + number +
+                "value = " + value  +
+                " of " + suitName + '\'' +
                 '}';
     }
 }
