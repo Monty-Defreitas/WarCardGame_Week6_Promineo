@@ -2,9 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class Player {
-    private static final List<Card> hand = new ArrayList<Card>();
+    private final List<Card> hand = new ArrayList<Card>();
     int score;
-    int loses;
     String name;
 
     public Player(String name) {
@@ -14,7 +13,7 @@ public final class Player {
 
     public void describe() {
         for (Card h : hand) {
-            System.out.println(h);
+            System.out.println(this.name + " " + h);
         }
     }
 
