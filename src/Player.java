@@ -57,21 +57,27 @@ public final class Player {
 
     public String getCardValue() {
         if (hand.size() == 0){
-            return newHand.get(getSizeNewHand() - 1).getValue();
+            if (newHand.size() != 0) {
+                return newHand.get(getSizeNewHand() - 1).getValue();
+            }
         }
         return hand.peek().getValue();
     }
 
     public Card flip() {
-        if (this.hand.size() == 0){
-           return newHand.peek();
-        }
-        return hand.peek();
+           if (this.hand.size() == 0) {
+               if (this.newHand.size() != 0) {
+                   return newHand.peek();
+               }
+           }
+           return hand.peek();
     }
 
     public Card discard(){
         if (this.hand.size() == 0){
-            return newHand.pop();
+            if (this.newHand.size() != 0) {
+                return newHand.pop();
+            }
         }
         return hand.pop();
     }
