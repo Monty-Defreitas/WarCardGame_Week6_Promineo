@@ -1,8 +1,17 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 
 public final class Player {
-    private final List<Card> hand = new ArrayList<Card>();
+    private  Stack<Card> hand = new Stack<Card>();
+
+    private Stack<Card> newHand = new Stack<Card>();
+
+
+
+    private  Stack<Card> warCard = new Stack<Card>();
+
     int score;
     String name;
 
@@ -21,15 +30,57 @@ public final class Player {
         hand.add(0, deck.draw());
     }
 
+
+    public Stack<Card> getWarCard() {
+        return warCard;
+    }
+
+    public void setWarCard(Card warCard) {
+        this.warCard.add(warCard);
+    }
+    public Stack<Card> getNewHand() {
+        return newHand;
+    }
+    public void setHand(Card ob){
+        hand.add(ob);
+    }
+    public void setNewHand(Card ob ){
+        newHand.add(ob);
+    }
+
     public String getCardSuit() {
-        return hand.get(0).getSuitName();
+        if (this.hand.size() == 0){
+            return newHand.get(getSizeNewHand() - 1).getSuitName();
+        }
+        return hand.peek().getSuitName();
     }
 
     public String getCardValue() {
-        return hand.get(0).getValue();
+        if (hand.size() == 0){
+            return newHand.get(getSizeNewHand() - 1).getValue();
+        }
+        return hand.peek().getValue();
     }
 
     public Card flip() {
-        return hand.remove(0);
+        if (this.hand.size() == 0){
+           return newHand.peek();
+        }
+        return hand.peek();
+    }
+
+    public Card discard(){
+        if (this.hand.size() == 0){
+            return newHand.pop();
+        }
+        return hand.pop();
+    }
+
+    public int getSizeHand(){
+        return hand.size();
+    }
+
+    public int getSizeNewHand(){
+        return newHand.size();
     }
 }
