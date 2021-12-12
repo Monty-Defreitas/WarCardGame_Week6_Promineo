@@ -1,7 +1,8 @@
 public class Application {
 
-
     public static void main(String[] args) {
+        // Deck of 52 Cards created when deck is instantiated.
+        // No need for second call of deck for question 4.
         Deck deck = new Deck();
         System.out.println("Making the deck...");
         Player draws = new Player("Draws");
@@ -20,11 +21,10 @@ public class Application {
 
         System.out.println("Shuffling the Deck...");
         deck.shuffle();
-
+        // Each player gets their own hand of 26 cards.
         for (int i = 0; i < 26; i++) {
             one.draw(deck);
             two.draw(deck);
-
         }
 
         for (int i = 0; i < 26; i++) {

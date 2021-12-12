@@ -1,8 +1,9 @@
+import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
 public final class Player {
-    private final List<Card> hand = new ArrayList<Card>();
+    private List<Card> hand = new ArrayList<Card>();
     int score;
     String name;
 
@@ -17,7 +18,7 @@ public final class Player {
         }
     }
 
-    public void draw(Deck deck) {
+    public void draw(@NotNull Deck deck) {
         hand.add(0, deck.draw());
     }
 
